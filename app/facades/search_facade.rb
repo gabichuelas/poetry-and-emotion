@@ -17,5 +17,4 @@ class SearchFacade
       tone[:tone_name]
     end
   end
-
 end

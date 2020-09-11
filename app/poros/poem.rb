@@ -1,5 +1,4 @@
 class Poem
-  SEARCH = SearchFacade.new
   attr_reader :title, :author, :full_text, :tones
   def initialize(poem_params, tones)
     @title = poem_params[:title]
