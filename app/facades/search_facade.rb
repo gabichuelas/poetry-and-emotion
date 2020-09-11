@@ -7,6 +7,7 @@ class SearchFacade
   def top_10_poems_for(author)
     poems = @poetry_service.poems(author, 10)
     poems.map do |poem|
+      require "pry"; binding.pry
       tones = get_tones(poem[:lines])
       Poem.new(poem, tones)
     end
