@@ -7,6 +7,12 @@ class IbmToneService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def document_tones(string)
+    result = tone_analyzer(string)
+    result[:document_tone][:tones]
+    # array of hash objects, each object is one tone
+  end
+
   private
 
   def conn
