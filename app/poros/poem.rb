@@ -4,10 +4,11 @@ class Poem
   def initialize(poem_params)
     @title = poem_params[:title]
     @author = poem_params[:author]
-    @full_text = poem_params[:lines].join("\n")
-    @tones = SEARCH.document_tones(@full_text).map do |tone|
-      tone[:tone_name]
-    end
+    @full_text = poem_params[:lines]
+    # @tones = SEARCH.document_tones(@full_text).map do |tone|
+    #   tone[:tone_name]
+    # end
+    @tones = []
   end
 
   # def tones

@@ -7,7 +7,11 @@ class SearchFacade
   def top_10_poems_for(author)
     poems = @poetry_service.poems(author, 10)
     poems.map do |poem|
-      Poem.new(poem)
+      new_poem = Poem.new(poem)
+      document_tones(new_poem.full_text.join("\n")).map do |tone|
+        new_poem.tones << tone[:tone_name]
+      end
+      new_poem
     end
   end
 

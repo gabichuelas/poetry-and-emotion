@@ -23,7 +23,7 @@ RSpec.describe Poem do
     expect(@poem.full_text).to eq("Not at Home to Callers\nSays the Naked Tree --\nBonnet due in April --\nWishing you Good Day --")
   end
 
-  it '#tones' do
+  xit '#tones' do
     tone_data = [
             {
                 "score": 0.730959,
