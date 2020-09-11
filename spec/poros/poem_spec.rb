@@ -9,12 +9,11 @@ RSpec.describe Poem do
             "Bonnet due in April --",
             "Wishing you Good Day --"
         ],
-        "linecount": "4"
+        "linecount": "4",
+        "tones": ["Joy"]
     }
 
-    tones = ["Joy"]
-
-    @poem = Poem.new(poem_details, tones)
+    @poem = Poem.new(poem_details)
   end
 
   it 'can create Poem with title, author, full_text, and tones' do
