@@ -17,7 +17,7 @@ class IbmToneService
 
   def conn
     Faraday.new(url: 'https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/2b4aa5e4-479b-4f20-90e8-bac52b0ef763/v3/') do |req|
-      req.basic_auth('apikey', '-_pug0dHBygSR4Isp_OWyfrlQjnHGOMXmAggIq66jxLS')
+      req.basic_auth('apikey', ENV['IBM_TONE_API_KEY'])
       req.headers['content-type'] = 'application/json'
       # dont know what this next one is
       # req.request  :retry
