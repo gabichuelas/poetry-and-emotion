@@ -1,7 +1,7 @@
 class SearchFacade
   def initialize
-    @poetry_service = PoetryService.new
-    @ibm_tone_service = IbmToneService.new
+    @poetry_service ||= PoetryService.new
+    @ibm_tone_service ||= IbmToneService.new
   end
 
   def top_10_poems_for(author)
