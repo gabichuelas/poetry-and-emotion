@@ -5,4 +5,8 @@ class Poem
     @author = poem_params[:author]
     @full_text = poem_params[:lines].join("\n")
   end
+
+  def tones
+    []
+  end
 end
