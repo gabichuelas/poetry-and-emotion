@@ -1,5 +1,5 @@
 RSpec.describe Poem do
-  it 'can create Poem with title, author, lines attributes' do
+  before :each do
     poem_details = {
         "title": "Not at Home to Callers",
         "author": "Emily Dickinson",
@@ -12,10 +12,31 @@ RSpec.describe Poem do
         "linecount": "4"
     }
 
-    poem = Poem.new(poem_details)
+    @poem = Poem.new(poem_details)
+  end
 
-    expect(poem.title).to eq('Not at Home to Callers')
-    expect(poem.author).to eq('Emily Dickinson')
-    expect(poem.full_text).to eq("Not at Home to Callers\nSays the Naked Tree --\nBonnet due in April --\nWishing you Good Day --")
+  it 'can create Poem with title, author, lines attributes' do
+
+
+    expect(@poem.title).to eq('Not at Home to Callers')
+    expect(@poem.author).to eq('Emily Dickinson')
+    expect(@poem.full_text).to eq("Not at Home to Callers\nSays the Naked Tree --\nBonnet due in April --\nWishing you Good Day --")
+  end
+
+  it 'can create array of tone names from raw tone data' do
+    tone_data = [
+            {
+                "score": 0.6165,
+                "tone_id": "sadness",
+                "tone_name": "Sadness"
+            },
+            {
+                "score": 0.829888,
+                "tone_id": "analytical",
+                "tone_name": "Analytical"
+            }
+        ]
+
+    expect(@poem.tones).to eq(["Saddness", "Analytical"])
   end
 end
