@@ -26,17 +26,12 @@ RSpec.describe Poem do
   it '#tones' do
     tone_data = [
             {
-                "score": 0.6165,
-                "tone_id": "sadness",
-                "tone_name": "Sadness"
-            },
-            {
-                "score": 0.829888,
-                "tone_id": "analytical",
-                "tone_name": "Analytical"
+                "score": 0.730959,
+                "tone_id": "joy",
+                "tone_name": "Joy"
             }
         ]
 
-    expect(@poem.tones).to eq(["Saddness", "Analytical"])
+    expect(@poem.tones).to eq(["Joy"])
   end
 end
